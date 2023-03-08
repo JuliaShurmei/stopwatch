@@ -9,3 +9,20 @@ let mins = 0o0;
 
 let timerId = null;
 
+startBtn.addEventListener('click', function(){
+    if(timerId !== null){
+        clearInterval(timerId);
+    }
+    timerId = setInterval(startTimer, 10);
+});
+
+stopBtn.addEventListener('click', function(){
+    clearInterval(timerId);
+});
+
+resetBtn.addEventListener('click', function(){
+    clearInterval(timerId);
+    timerDisplay.innerHTML = `00 : 00 : 00`;
+    msec = secs = mins = 0o0;
+});
+
